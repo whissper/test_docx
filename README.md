@@ -6,6 +6,9 @@ docx with node.js backend (usage docxtemplater)
 ## npm commands for node_modules
 
 ```
+$ npm install express --save 
+```
+```
 $ npm install docxtemplater --save 
 ```
 ```
