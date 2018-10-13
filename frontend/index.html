@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>docX </title>
+	
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.ru.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+	<script type="text/javascript" src="js/inputmask.min.js"></script>
+	<script type="text/javascript" src="js/jquery.inputmask.min.js"></script>
+	<script type="text/javascript" src="js/jquery.suggestions.min.js"></script>
+	<script type="text/javascript" src="js/jquery.twbsPagination.js"></script>
+	<script defer type="text/javascript" src="fontawesome-free-5_0_13/svg-with-js/js/fontawesome-all.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-datepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-tagsinput.css" />
+	<link rel="stylesheet" type="text/css" href="styles/suggestions.css" />
+	
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<script type="text/javascript" src="js/own.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid sav2-top-header">
+	<div class="row">
+		<div class="col-xs-12 sav2-service-title">
+			<div class="item item1">docX</div>
+			<div class="item item2"></div>
+			<div class="item item3">&nbsp;BETA</div>
+			<div class="item item4"><i class="fab fa-node fa-4x"></i></div>
+		</div>
+		
+		
+	</div><!-- /row -->
+</div><!-- /container -->
+
+<div class="container sav2-main-cont">
+	<div class="row">
+		<div class="col-md-12 sav2-workspace">
+			<!-- DYNAMIC -->
+			<style>
+			.btn-default.active {
+				background-color: #bbbbbb !important;
+			}
+			
+			.form-header {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 0 20px 0;
+			}
+			
+			.sav2-group {
+				border: 1px solid #eee;
+				border-radius: 5px;
+				padding: 10px 10px 0px 10px;
+			}
+			
+			.sav2-date-input {
+				max-width: 150px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.sav2-date-input-2 {
+				max-width: 240px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.sav2-input {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.form-inline .btn-group {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.footer {
+				height: 150px;
+			}
+			</style>
+			<div class="row">
+				<div class="form-group col-md-3">
+					<button type="button" class="btn btn-default back-to-log">Вернуться в журнал &nbsp;<i class="fas fa-external-link-alt"></i></button>
+				</div>
+			</div>
+			<div class="form-header">
+				<p>Акт обследования системы теплопотребления для проверки готовности к ОЗП 2018 г. &ndash; 2019 г.</p>
+			</div>
+			<hr />
+			<form>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="docDate">Дата акта:</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+							<input type="text" class="form-control" id="docDate">
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="docTown">Город: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-building"></i></span>
+							<select class="form-control" id="docTown">
+								<option value="1">г. Сыктывкар</option>
+								<option value="2">г. Сосногорск</option>
+								<option value="3">г. Ухта</option>
+								<option value="3">г. Инта</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="consumerName">Потребитель: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-user-tie"></i></span>
+							<input type="text" class="form-control" id="consumerName">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="consumerAddress">Адрес потребителя: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+							<input type="text" class="form-control" id="consumerAddress">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="contractNum">Договор: </label>
+						<div class="input-group">
+							<span class="input-group-addon">№ </span>
+							<input id="contractNum" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="contractDate">&nbsp;</label>
+						<div class="input-group">
+							<span class="input-group-addon">от </span>
+							<input id="contractDate" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="tsoRank">Представитель Теплоснабжающей организации (ТСО): </label>
+						<div class="input-group">
+							<span class="input-group-addon">Должность </span>
+							<input id="tsoRank" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="tsoFio">&nbsp;</label>
+						<div class="input-group">
+							<span class="input-group-addon">ФИО </span>
+							<input id="tsoFio" type="text" class="form-control">
+						</div>
+					</div>
+					<!-- | -->
+					<div class="form-group col-md-6">
+						<label for="agentRank">Представитель АО «Коми энергосбытовая компания»: </label>
+						<div class="input-group">
+							<span class="input-group-addon">Должность </span>
+							<select class="form-control" id="agentRank">
+								<option value="1">инженер</option>
+								<option value="2">инженер 1-й категории</option>
+								<option value="3">ведущий инженер</option>
+								<option value="4">главный инженер</option>
+								<option value="5">техник</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="agentFio">&nbsp;</label>
+						<div class="input-group">
+							<span class="input-group-addon">ФИО </span>
+							<input id="agentFio" type="text" class="form-control">
+						</div>
+					</div>
+					<!-- | -->
+					<div class="form-group col-md-6">
+						<label for="consumerRank">Представитель Потребителя тепловой энергии (Клиента): </label>
+						<div class="input-group">
+							<span class="input-group-addon">Должность </span>
+							<input id="consumerRank" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="consumerFio">&nbsp;</label>
+						<div class="input-group">
+							<span class="input-group-addon">ФИО </span>
+							<input id="consumerFio" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="docDate">Дата обследования: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+							<input id="surveyDate" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-8">
+						<label for="objectAddress">Произведено обследование системы теплопотребления объекта Потребителя, по адресу: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
+							<input id="objectAddress" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="objectNote">Примечание: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="far fa-comment"></i></span>
+							<input id="objectNote" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="form-group col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p1">1. Номер ЦТП/ИТП/камеры, от которых осуществляется теплоснабжение подключенного объекта: </label>
+						</div>
+						<div class="form-group">
+							<div class="input-group sav2-date-input">
+								<span class="input-group-addon"><i class="far fa-circle"></i></span>
+								<input id="p1" type="text" class="form-control">
+							</div>
+						</div>
+					</div>					
+					<div class="form-group col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p2">2. Этажность здания: </label>
+						</div>
+						<div class="form-group">
+							<div class="input-group sav2-date-input">
+								<span class="input-group-addon"><i class="far fa-circle"></i></span>
+								<input id="p2" type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p3">3. Система теплопотребления по видам тепловой нагрузки: </label>
+						</div>
+						<div class="form-group">
+							<label for="p3_a">Отопление: </label>
+							<div class="btn-group" role="group" id="p3_a">
+								<button type="button" class="btn btn-default btn1 active">есть</button>
+								<button type="button" class="btn btn-default btn1">нет</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p3_b">Горячее водоснабжение (ГВС): </label>
+							<div class="btn-group" role="group" id="p3_b">
+								<button type="button" class="btn btn-default btn1 active">есть</button>
+								<button type="button" class="btn btn-default btn1">нет</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p3_c">Вентиляция: </label>
+							<div class="btn-group" role="group" id="p3_c">
+								<button type="button" class="btn btn-default btn1 active">есть</button>
+								<button type="button" class="btn btn-default btn1">нет</button>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p4">4. Количество тепловых вводов в здание: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p4">
+								<button type="button" class="btn btn-default btn1 active">1</button>
+								<button type="button" class="btn btn-default btn1">2</button>
+								<button type="button" class="btn btn-default btn1">3</button>
+								<button type="button" class="btn btn-default btn1">4</button>
+								<button type="button" class="btn btn-default btn1">5</button>
+								<button type="button" class="btn btn-default btn1">6</button>
+								<button type="button" class="btn btn-default btn1">7</button>
+								<button type="button" class="btn btn-default btn1">8</button>
+								<button type="button" class="btn btn-default btn1">9</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p5">5. Количество индивидуальных тепловых пунктов: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p5">
+								<button type="button" class="btn btn-default btn1 active">1</button>
+								<button type="button" class="btn btn-default btn1">2</button>
+								<button type="button" class="btn btn-default btn1">3</button>
+								<button type="button" class="btn btn-default btn1">4</button>
+								<button type="button" class="btn btn-default btn1">5</button>
+								<button type="button" class="btn btn-default btn1">6</button>
+								<button type="button" class="btn btn-default btn1">7</button>
+								<button type="button" class="btn btn-default btn1">8</button>
+								<button type="button" class="btn btn-default btn1">9</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p6">6. Температурный график объекта: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p6">
+								<button type="button" class="btn btn-default btn1 active">150/70</button>
+								<button type="button" class="btn btn-default btn1">130/70</button>
+								<button type="button" class="btn btn-default btn1">115/70</button>
+								<button type="button" class="btn btn-default btn1">95/70</button>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p7">7. Проект системы теплопотребления объекта: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p7">
+								<button type="button" class="btn btn-default btn1 active">предоставлен</button>
+								<button type="button" class="btn btn-default btn1">не предоставлен</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="form-group">
+							<label for="p8">8. Соответствие проектно-договорным параметрам фактического конструктива системы теплопотребления и нагрузки: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p8">
+								<button type="button" class="btn btn-default btn1 active">соответствуют</button>
+								<button type="button" class="btn btn-default btn1">не соответствуют</button>
+							</div>
+						</div>
+					</div>				
+				</div>
+				<div class="row">
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p9">9. Паспорт теплопотребляющей установки: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p9">
+								<button type="button" class="btn btn-default btn1 active">в наличии</button>
+								<button type="button" class="btn btn-default btn1">отсутствует</button>
+							</div>
+						</div>
+						<!-- | -->
+						<div class="form-group">
+							<label for="p10">10. Принципиальная схема теплового пункта: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p10">
+								<button type="button" class="btn btn-default btn1 active">в наличии</button>
+								<button type="button" class="btn btn-default btn1">отсутствует</button>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p11">11. Промывка системы теплопотребления: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p11">
+								<button type="button" class="btn btn-default btn1 active">производилась</button>
+								<button type="button" class="btn btn-default btn1">не производилась</button>
+							</div>
+						</div>
+						<!-- | -->
+						<div class="form-group">
+							<label for="p11">Промывка производилась: </label>
+						</div>
+						<div class="form-group">
+							<div class="form-inline">
+								<div class="input-group sav2-date-input">
+									<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+									<input id="washDate" type="text" class="form-control">
+								</div>
+								<div class="btn-group" role="group" id="p11_water">
+									<button type="button" class="btn btn-default btn1 active">холодной водой</button>
+									<button type="button" class="btn btn-default btn1">горячей водой</button>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="form-group">
+							<label for="p12">12. Дезинфекция системы теплопотребления: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p12">
+								<button type="button" class="btn btn-default btn1 active">производилась</button>
+								<button type="button" class="btn btn-default btn1">не производилась</button>
+								<button type="button" class="btn btn-default btn1">не требуется</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="form-group">
+							<label for="p13">13. Гидравлические испытания на плотность и прочность: </label>
+						</div>
+						<div class="form-group">
+							<label for="p13_a">Системы отопления: </label>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p13_a">
+									<button type="button" class="btn btn-default btn2">производились</button>
+									<button type="button" class="btn btn-default btn2">не производились</button>
+								</div>
+								<div class="input-group sav2-date-input">
+									<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+									<input id="p13_a_date" type="text" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p13_b">Системы ГВС: </label>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p13_b">
+									<button type="button" class="btn btn-default btn2">производились</button>
+									<button type="button" class="btn btn-default btn2">не производились</button>
+									<button type="button" class="btn btn-default btn2">не требуется</button>
+								</div>
+								<div class="input-group sav2-date-input">
+									<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+									<input id="p13_b_date" type="text" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p13_c">Тепловых сетей потребителя: </label>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p13_c">
+									<button type="button" class="btn btn-default btn2">производились</button>
+									<button type="button" class="btn btn-default btn2">не производились</button>
+									<button type="button" class="btn btn-default btn2">нет на балансе</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p14">14.1 Сужающие (дроссельные) устройства: </label>
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon">Элеватор №: </span>
+									<input id="p14_a" type="text" class="form-control">
+								</div>
+							</div>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p14_a1">
+									<button type="button" class="btn btn-default btn2">в наличии</button>
+									<button type="button" class="btn btn-default btn2">отсутствует</button>
+								</div>
+								<div class="btn-group" role="group" id="p14_a2">
+									<button type="button" class="btn btn-default btn2">опломбирован</button>
+									<button type="button" class="btn btn-default btn2">не опломбирован</button>
+								</div>
+								<div class="input-group sav2-input">
+									<span class="input-group-addon">размер сужающего устройства в элеваторе d= </span>
+									<input id="p14_a3" type="text" class="form-control">
+									<span class="input-group-addon"> мм</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p14">14.2 Сужающие (дроссельные) устройства: </label>
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<input type="text" class="form-control" disabled="" value="Дроссельные устройства отопительной системы:">
+							</div>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p14_b1">
+									<button type="button" class="btn btn-default btn2">в наличии</button>
+									<button type="button" class="btn btn-default btn2">отсутствует</button>
+								</div>
+								<div class="btn-group" role="group" id="p14_b2">
+									<button type="button" class="btn btn-default btn2">опломбирован</button>
+									<button type="button" class="btn btn-default btn2">не опломбирован</button>
+								</div>
+								<div class="input-group sav2-input">
+									<span class="input-group-addon">размер d= </span>
+									<input id="p14_b3" type="text" class="form-control">
+									<span class="input-group-addon"> мм</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p14">14.3 Сужающие (дроссельные) устройства: </label>
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<input type="text" class="form-control" disabled="" value="Дроссельные устройства системы горячего водоснабжения:">
+							</div>
+							<div class="form-inline">
+								<div class="btn-group" role="group" id="p14_c1">
+									<button type="button" class="btn btn-default btn2">в наличии</button>
+									<button type="button" class="btn btn-default btn2">отсутствует</button>
+								</div>
+								<div class="btn-group" role="group" id="p14_c2">
+									<button type="button" class="btn btn-default btn2">опломбирован</button>
+									<button type="button" class="btn btn-default btn2">не опломбирован</button>
+								</div>
+								<div class="input-group sav2-input">
+									<span class="input-group-addon">размер d= </span>
+									<input id="p14_c3" type="text" class="form-control">
+									<span class="input-group-addon"> мм</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-12 sav2-group">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="p15">15. Приборы КИПиА: </label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p15_a">Манометры в контрольных точках: </label>
+								<div class="form-inline">
+									<div class="btn-group" role="group" id="p15_a">
+										<button type="button" class="btn btn-default btn2">есть</button>
+										<button type="button" class="btn btn-default btn2">нет</button>
+									</div>
+									<div class="input-group sav2-date-input-2">
+										<span class="input-group-addon">дата поверки: </span>
+										<input id="p15_a_d" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="p15_b">Термометры в контрольных точках: </label>
+								<div class="form-inline">
+									<div class="btn-group" role="group" id="p15_b">
+										<button type="button" class="btn btn-default btn2">есть</button>
+										<button type="button" class="btn btn-default btn2">нет</button>
+									</div>
+									<div class="input-group sav2-date-input-2">
+										<span class="input-group-addon">дата поверки: </span>
+										<input id="p15_b_d" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p15_c">Регулятор температуры системы горячего водоснабжения: </label>
+								<div class="form-inline">
+									<div class="btn-group" role="group" id="p15_c">
+										<button type="button" class="btn btn-default btn2">есть</button>
+										<button type="button" class="btn btn-default btn2">нет</button>
+									</div>
+									<div class="input-group sav2-date-input-2">
+										<span class="input-group-addon">дата поверки: </span>
+										<input id="p15_c_d" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="p15_d">Система автоматического погодного регулирования: </label>
+								<div class="form-inline">
+									<div class="btn-group" role="group" id="p15_d">
+										<button type="button" class="btn btn-default btn2">есть</button>
+										<button type="button" class="btn btn-default btn2">нет</button>
+									</div>
+									<div class="input-group sav2-date-input-2">
+										<span class="input-group-addon">дата поверки: </span>
+										<input id="p15_d_d" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p16_a">16. Приборный учет тепловой энергии, теплоносителя на объекте: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p16_a">
+								<button type="button" class="btn btn-default btn2">есть</button>
+								<button type="button" class="btn btn-default btn2">нет</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_a1">Прибор учета общий на отопление и ГВС: </label>
+						</div>
+						<div class="form-group">		
+							<div class="btn-group" role="group" id="p16_a1">
+								<button type="button" class="btn btn-default btn2">в наличии</button>
+								<button type="button" class="btn btn-default btn2">отсутствует</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_a2">Прибор учета ГВС: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p16_a2">
+								<button type="button" class="btn btn-default btn2">в наличии</button>
+								<button type="button" class="btn btn-default btn2">отсутствует</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_a3">Прибор учета ОТОПЛЕНИЕ: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p16_a3">
+								<button type="button" class="btn btn-default btn2">в наличии</button>
+								<button type="button" class="btn btn-default btn2">отсутствует</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_b">Пломбы теплоснабжающей организации на оборудовании узла учета: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p16_b">
+								<button type="button" class="btn btn-default btn2">есть</button>
+								<button type="button" class="btn btn-default btn2">нет</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_c">На момент обследования Акт допуска в эксплуатацию прибора учета: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p16_c">
+								<button type="button" class="btn btn-default btn2">предоставлен</button>
+								<button type="button" class="btn btn-default btn2">не предоставлен</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p16_counters">Снятие контрольных показаний с прибора учета на дату составления акта: </label>
+						</div>
+						<div class="form-group">
+							<div class="form-inline">
+								<div class="input-group sav2-input">
+									<input id="p16_gk" type="text" class="form-control">
+									<span class="input-group-addon"> Гкал</span>
+								</div>
+								<div class="input-group sav2-input">
+									<input id="p16_m3" type="text" class="form-control">
+									<span class="input-group-addon"> м3</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="form-group">
+							<label for="p17">17. Состояние теплоизоляции трубопроводов (основной и покровный слой): </label>
+						</div>
+						<div class="form-group">
+							<label for="p17_a">Теплового пункта: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p17_a">
+								<button type="button" class="btn btn-default btn2">есть</button>
+								<button type="button" class="btn btn-default btn2">нет</button>
+								<button type="button" class="btn btn-default btn2">частично</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p17_b">Трубопроводов отопления: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p17_b">
+								<button type="button" class="btn btn-default btn2">есть</button>
+								<button type="button" class="btn btn-default btn2">нет</button>
+								<button type="button" class="btn btn-default btn2">частично</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="p17_c">Трубопроводов ГВС: </label>
+						</div>
+						<div class="form-group">
+							<div class="btn-group" role="group" id="p17_c">
+								<button type="button" class="btn btn-default btn2">есть</button>
+								<button type="button" class="btn btn-default btn2">нет</button>
+								<button type="button" class="btn btn-default btn2">частично</button>
+							</div>
+						</div>
+					</div>
+					<!-- | -->
+					<div class="col-md-6 sav2-group">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="p18">18. Запорная арматура в тепловом узле: </label>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_a">В системе отопления: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_a">
+									<button type="button" class="btn btn-default btn2">есть</button>
+									<button type="button" class="btn btn-default btn2">нет</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_a1">Cостояние арматуры: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_a1">
+									<button type="button" class="btn btn-default btn2">удовл.</button>
+									<button type="button" class="btn btn-default btn2">не удовл.</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_b">В системе ГВС: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_b">
+									<button type="button" class="btn btn-default btn2">есть</button>
+									<button type="button" class="btn btn-default btn2">нет</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_b1">Состояние арматуры: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_b1">
+									<button type="button" class="btn btn-default btn2">удовл.</button>
+									<button type="button" class="btn btn-default btn2">не удовл.</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_c">В системе вентиляции: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_c">
+									<button type="button" class="btn btn-default btn2">есть</button>
+									<button type="button" class="btn btn-default btn2">нет</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p18_c1">Состояние арматуры: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p18_c1">
+									<button type="button" class="btn btn-default btn2">удовл.</button>
+									<button type="button" class="btn btn-default btn2">не удовл.</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="p19">19. Состояние утепления здания: </label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p19_a">Состояние наружных ограждающих конструкций (окна, входные двери, стены и т.д.): </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p19_a">
+									<button type="button" class="btn btn-default btn1 active">удовл.</button>
+									<button type="button" class="btn btn-default btn1">не удовл.</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="p19_b">Состояние подвальных помещений: </label>
+							</div>
+							<div class="form-group">
+								<div class="btn-group" role="group" id="p19_b">
+									<button type="button" class="btn btn-default btn1 active">удовл.</button>
+									<button type="button" class="btn btn-default btn1">не удовл.</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="form-group">
+							<label for="p20">20. Выполнение ранее выданных рекомендаций по устранению замечаний в отношении работы, состояния, эксплуатации системы теплопотребления на момент проверки не выполнено пунктов, а именно:</label>
+							<input id="p20" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<div class="form-group">
+							<label for="p21">21. На основании проведенного обследования, Потребителю рекомендуется устранить следующие замечания до начала ОЗП 2018-2019 гг. (нужное отметить):</label>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_1">1. Восстановить изоляцию трубопроводов в индивидуальном тепловом пункте (ИТП).</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_2">2. Оформить паспорт теплопотребляющей установки с размещением его в ИТП.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_3">3. Оформить и вывесить в помещении ИТП принципиальную схему теплопотребляющей установки и инструкцию для обслуживающего персонала.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_4">4. Обеспечить наличие КИП давления и температуры теплоносителя в контрольных точках измерения.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_5">5. Произвести ревизию запорной арматуры в системе теплопотребления.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_6">6. Обеспечить маркировку оборудования ИТП согласно схеме.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_7">7. Другое (при наличии других замечаний, указать дополнительно):</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_71">7.1 Предоставить проект на систему теплопотребления.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_72">7.2 Восстановить тепловую изоляцию на трубопроводах внутридомовых систем отопления, вентиляции и горячего водоснабжения.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_73">7.3 На подающем и обратном трубопроводе обеспечить устройства для механической очистки от взвешенных частиц.</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_74">7.4 Обеспечить на вводах трубопроводах тепловых сетей в здания устройств, предотвращающих проникновение сетевой воды в здания, ИТП (заделать ниши каналов на вводах трубопроводов в здания)</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" id="p21_8">8. В соответствии со статьей 13 указанного Федерального закона Вы обязаны в срок до 1 января 2019 года обеспечить установку и ввод в эксплуатацию общедомового прибора учета тепловой энергии, ГВС.</label>
+							</div>
+							<label for="p20">дополнительно:</label>
+							<input id="p21_add" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sav2-group">
+						<label for="p22_date">22. Срок устранения данных рекомендаций до: </label>
+						<div class="input-group sav2-date-input">
+							<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+							<input id="p22_date" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<hr />
+			</form>
+			<div class="row">
+				<div class="col-md-12">
+					<form id="form1" action="/docx/getdocx/" method="post" target="_blank">
+						<input id="json1" name="jsonStr" type="hidden" value="">
+					</form>
+					<button class="btn btn-lg btn-info btn-block" type="submit" id="btnsend">cформировать <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="footer"></div>
+			</div>
+			<!-- DYNAMIC -->
+		</div><!-- /col -->
+	 </div><!-- /row -->
+</div><!-- /container -->
+
+<div id="light_cover">
+	<div class="light_cover_info">
+		<i class="fas fa-spinner fa-pulse fa-7x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+</div>
+
+</body>
+<script>
+$('#docDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#docDate').datepicker('update', new Date());
+
+$('#contractDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#surveyDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#washDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p13_a_date').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p13_b_date').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p15_a_d').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p15_b_d').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p15_c_d').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p15_d_d').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#p22_date').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#consumerAddress', document).suggestions({
+	token: 'aa87679e3bfbbdaca05a44aa93ad6af10d54045a',
+	type: 'ADDRESS',
+	count: 7,
+	onSelect: function(suggestion) {
+		
+	}
+});
+
+$('#objectAddress', document).suggestions({
+	token: 'aa87679e3bfbbdaca05a44aa93ad6af10d54045a',
+	type: 'ADDRESS',
+	count: 7,
+	onSelect: function(suggestion) {
+		
+	}
+});
+</script>
+</html>
